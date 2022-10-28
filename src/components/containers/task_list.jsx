@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { LEVELS } from "../../models/levels.enum"
-import { Task } from "../../models/task.class"
-import TaskComponent from "../pure/task"
+import React, { useState, useEffect } from 'react';
+import { LEVELS } from "../../models/levels.enum";
+import { Task } from "../../models/task.class";
+import TaskComponent from "../pure/task";
+import { useNavigate}  from 'react-router-dom';
 
 import '../../styles/task.scss';
 import TaskForm from '../pure/forms/taskForm';
@@ -107,6 +108,7 @@ const TaskListComponent = () => {
       fontSize: '30px',
       fontWeight: 'bold'
     }
+    const navigate = useNavigate()
 
     return (
     <div>
@@ -114,6 +116,7 @@ const TaskListComponent = () => {
             <div className='card'>
               {/* Card header (title) */}
               <div className='card-header p-3'>
+                <button onClick={() => navigate(-1)}>Back</button>
                   <h5 className='text-center'>
                     Your Task:
                   </h5>
