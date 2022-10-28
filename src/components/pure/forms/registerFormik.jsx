@@ -2,6 +2,9 @@ import React from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+import { useNavigate } from 'react-router-dom'
+
+
 // Models
 import { User } from '../../../models/user.class'
 import { ROLES } from '../../../models/roles.enum';
@@ -53,9 +56,12 @@ const RegisterFormik = () => {
     alert('Register user')
   }
 
+  const navigate = useNavigate();
+
   return (
     <div>
         <h4>Register Formik</h4>
+        <button onClick={() => navigate(-1)}>Back</button>
 
         <Formik
             initialValues={ initialValues }

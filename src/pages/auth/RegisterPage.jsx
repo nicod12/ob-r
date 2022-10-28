@@ -1,5 +1,6 @@
 
 import React from 'react'
+import RegisterFormik from '../../components/pure/forms/registerFormik'
 
 const RegisterPage = () => {
   return (
@@ -7,6 +8,8 @@ const RegisterPage = () => {
         <h1>
             Register Page
         </h1>
+        <RegisterFormik />
+        
     </div>
   )
 }

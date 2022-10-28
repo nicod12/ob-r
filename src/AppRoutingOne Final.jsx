@@ -1,6 +1,7 @@
 import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom'
 import  NotFoundPage from './pages/404/NotFoundPage'
 import LoginPage from './pages/auth/LoginPage';
+import RegisterPage from './pages/auth/RegisterPage';
 import DashBoardPage from './pages/dashboard/DashBoardPage';
 import TasksPage from './pages/tasks/TasksPage';
 
@@ -29,6 +30,7 @@ const AppRoutingOneFinal =() => {
             <Navigate to="/login" />
           }/>
         <Route path='/taskspage' element={loggedIn ? (<TasksPage />) : <Navigate  to='/login' />} />
+        <Route path='/register' element={ <RegisterPage /> } />
         <Route path='*' element={ <NotFoundPage /> } />
       </Routes>
     </BrowserRouter>

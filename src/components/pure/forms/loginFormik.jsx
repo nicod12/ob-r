@@ -1,6 +1,10 @@
-import React from 'react'
-import { Formik, Field, Form, ErrorMessage } from 'formik'
+import React from 'react';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const LoginFormik = () => {
 
@@ -17,6 +21,12 @@ const LoginFormik = () => {
   const initialCredential = {
     email: '',
     password: ''
+  }
+
+  const navigate = useNavigate();
+
+  const registerTo = () =>{
+    navigate('/register');
   }
 
   return (
@@ -88,7 +98,7 @@ const LoginFormik = () => {
                             <button type='submit'>Login</button> 
 
                             {isSubmitting ? (<p>Login your credentials</p>) : null}
-
+                            <button onClick={registerTo}>Register</button>
                     </Form> 
                 )}
             </Formik>
