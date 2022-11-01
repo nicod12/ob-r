@@ -25,7 +25,6 @@ const ChukJokes = () => {
   }
 
   useEffect(() =>{
-    getRandomJoke();
   },[])
 
   const handleClick = () => {
@@ -55,11 +54,16 @@ const ChukJokes = () => {
         </Button>
 
       <div>
-        <h3>
-          {joke.value}
-          <Button name='like' onClick={changeLike}>Like: {like}</Button>
-          <Button name='deslike' onClick={changeLike}>Deslike: {deslike}</Button>
-        </h3>
+          {joke.value ? (
+            <div>
+                        <article>{joke.value}</article>
+                        <Button name='like' onClick={changeLike}>Like: {like}</Button>
+                        <Button name='deslike' onClick={changeLike}>Deslike: {deslike}</Button>
+            </div>
+          ) 
+          : (
+            <p>Press Button Generate Joke</p>
+          ) }
       </div>
     </div>
   )
